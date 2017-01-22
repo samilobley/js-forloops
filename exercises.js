@@ -9,7 +9,7 @@ Write a for-loop that will iterate through 20 numbers (starting at 1 and ending 
 "Now serving 20."
 */
 for (var i = 1; i<21; i++){
-	console.log("Now Serving " + i);
+	console.log("Now Serving " + i + ".");
 }
 
 
@@ -23,6 +23,9 @@ Write a for-loop that will iterate through the topFive array below and console.l
 */
 
 var topFive = ["Closer", "Starboy", "I Feel It Coming", "Let Me Love You", "24K Magic"];
+for (var i = 0; i<topFive.length; i++){
+	console.log("This week's chart buster is: " + topFive[i]);
+}
 
 
 /* 3) Dead Presidents
@@ -44,15 +47,41 @@ This function will iterate through the person parameter and console.log the foll
 
 "President person was a great leader."
 */
+var presidents = ["Washington", "Adams", "Jefferson", "Madison", "Monroe"];
 
+for (var i = 0; i<presidents.length; i++){
+	console.log("The value at " + i + " is " + presidents[i] + ".");
+}
 
-/* 4) Line Number
-Declare a variable named `stringOfNumbers` and assign its value to an empty string. 
+function leaders(person){
+	for (var i = 0; i<person.length; i++){
+		console.log("President " + person[i] + " was a great leader.");
+	}
+}
+leaders(presidents);
 
-Write a for-loop that concatenates a Number value into that string on each iteration, starting at `10` and continuing up to and including `20`. Console.log your result. It should read "1011121314151617181920"
-
-4-A) Create a function called `appendToString` and have it produce the same result as above. Console.log your results.
+/*4) Line Number
+Declare a variable named `stringOfNumbers` and assign its value to an empty string.
 */
+var stringOfNumbers = "";
+/*
+Write a for-loop that concatenates a Number value into that string on each iteration, starting at `10` and continuing up to and including `20`. Console.log your result. It should read "1011121314151617181920"
+*/
+/*for (var i = 10; i<21; i++){
+     stringOfNumbers += i; 
+}
+console.log(stringOfNumbers);*/
+/*
+4-A) Create a function called `appendToString` and have it produce the same result as above. Console.log your results.*/
+
+function appendToString(s){
+	for (var i = 10; i <21; i++){
+		 s += i;
+	}
+	return s;
+}
+console.log(appendToString(stringOfNumbers));
+
 
 
 /* 5) Even Stevens
@@ -61,7 +90,16 @@ Declare a variable named `evenNumArr` and assign its value to an empty array.
 Write a for-loop that will push even numbers to the `evenNumArr` array. We want to push 50 even even numbers starting from 0.
 Console.log your results.
 */
+var evenNumArr = [];
 
+for (var i = 0; i<51; i++){
+	if (i % 2 === 0){
+		console.log(i);
+		evenNumArr.push(i);
+	}
+}
+
+console.log(evenNumArr);
 
 /* 6) Up the Odds
 Declare a variable named `oddSum` and assign it to the Number value 0.
@@ -77,7 +115,14 @@ Note that every odd index value in `oopsArray` is currently `undefined`. Using a
 
 [ 'turn' , 'nope' , 'down' , 'nope' , 'for' , 'nope' , 'what' ]
 */
-
+var oopsArray = ['turn', 'down', 'for', 'what' ];
+for (var i = 0; i<oopsArray.length; i++){
+	if (i % 2 === 1){
+		console.log(oopsArray[i]); // is equal to undefined
+		oopsArray[i] = "nope";
+	}
+}
+console.log(oopsArray);
 
 /* 8) Is It There Opps
 Using a for-loop, iterate through the Array stored at `oopsArray` backwards. Console.log your result. It should look like this:
@@ -129,7 +174,7 @@ Write a function named `generateArrayOfStrings` which takes a single argument `s
 Write a function that will capitalize the first letter in each word in the phrase below. The function will console.log the message: "I've Lived A Life That's Full. I've Traveled Each and Every Highway. But More, Much More Than This. I Did It My Way."  
 */
 
-var myWay = "i've lived a life that's full, i've traveled each and every highway. but more, much more than this. i did it my way."
+//var myWay = "i've lived a life that's full, i've traveled each and every highway. but more, much more than this. i did it my way."
 
 
 /* 14) Back to School
